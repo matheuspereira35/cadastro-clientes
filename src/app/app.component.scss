@@ -1,0 +1,25 @@
+.spacer{
+    flex: 1 1 auto;
+}
+
+.buttons-nav{
+    width: 350px;
+    height: 50px;
+    margin-right: 15px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.buttons-nav a{
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    text-align: center;
+    color: #fff;
+    gap: 0.5rem;
+}
+
+.buttons-nav a:hover{
+    color: #ddd;
+}
