@@ -9,6 +9,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
 import { ClienteService } from '../cliente.service';
 import { Cliente } from '../cadastro/cliente';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -30,9 +31,12 @@ export class ConsultaComponent implements OnInit{
 
   nomeBusca: string = '';
   listaCliente: Cliente[] = [];
-  colunasTable: string[] = ['id', 'nome', 'email', 'cpf', 'dataNascimento'];
+  colunasTable: string[] = ['id', 'nome', 'email', 'cpf', 'dataNascimento', 'acoes'];
 
-  constructor(private service : ClienteService){
+  constructor(
+    private service: ClienteService,
+    private router: Router
+  ){
 
   }
 
@@ -42,6 +46,10 @@ export class ConsultaComponent implements OnInit{
 
   pesquisar(){
     this.listaCliente = this.service.pesquisarCliente(this.nomeBusca);
+  }
+
+  preparaEditar(id: string){
+    this.router.navigate(['/cadastro'], { queryParams: {"id": id} })
   }
 
 }
