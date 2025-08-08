@@ -41,6 +41,7 @@
                   type="text"
                   placeholder="ex: 000.111.222-33"
                   name="cpf"
+                  mask="000.000.000-00"
                   [(ngModel)]="cliente.cpf"
                 />
               </mat-form-field>
@@ -52,6 +53,7 @@
                 <input
                   matInput
                   type="text"
+                  mask="00/00/0000"
                   placeholder="01/01/1991"
                   name="dataNascimento"
                   [(ngModel)]="cliente.dataNascimento"
