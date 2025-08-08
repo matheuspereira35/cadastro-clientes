@@ -26,6 +26,18 @@ export class ClienteService {
     })
     localStorage.setItem(ClienteService.REPO_CLIENTES, JSON.stringify(storage));
   }
+  
+  deletar(cliente: Cliente){
+    const storage = this.obterStorage();
+    
+    // const indexItem = storage.indexOf(cliente);
+    // if(indexItem > -1){
+    //   storage.splice(indexItem, 1);
+    // }
+    
+    const novaLista = storage.filter(c => c.id !== cliente.id)
+    localStorage.setItem(ClienteService.REPO_CLIENTES, JSON.stringify(novaLista));
+  }
 
   pesquisarCliente(nomeBusca: string) : Cliente[]{
 
